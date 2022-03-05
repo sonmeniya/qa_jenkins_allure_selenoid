@@ -50,14 +50,13 @@ public class RegistrationFormTest extends TestBase {
         });
         step("Выбираем штат и город", () -> {
             registrationPage.setState("NCR")
-                            .setCity("Delhi");
+                    .setCity("Delhi");
         });
         step("Нажимаем на кнопку submit и отправляем данные", () -> {
             registrationPage.submitForm();
         });
 
 
-//        Проверка заполненных данных
         step("Сверяем заполненные данные с загруженными", () -> {
             registrationPage.checkResultsValue("Student Name", TestData.firstName + " " + TestData.lastName)
                     .checkResultsValue("Student Email", TestData.email)
@@ -71,30 +70,5 @@ public class RegistrationFormTest extends TestBase {
                     .checkResultsValue("State and City", "NCR Delhi");
         });
 
-
-//        registrationPage.openPage()
-//                        .typeFirstName(TestData.firstName)
-//                        .typeLastName(TestData.lastName)
-//                        .typeEmail(TestData.email)
-//                        .chooseGender("Female")
-//                        .typePhoneNumber(TestData.phoneNumber)
-//                        .setBirthdayDate("2001", "February", "3")
-//                        .chooseSubject("Maths")
-//                        .setHobbies("Reading")
-//                        .uploadPicture("test.jpg")
-//                        .typeAddress(TestData.address)
-//                        .setState("NCR")
-//                        .setCity("Delhi")
-//                        .submitForm();
-//        registrationPage.checkResultsValue("Student Name", TestData.firstName + " " + TestData.lastName)
-//                .checkResultsValue("Student Email", TestData.email)
-//                .checkResultsValue("Gender", "Female")
-//                .checkResultsValue("Mobile", TestData.phoneNumber)
-//                .checkResultsValue("Date of Birth", "03 February,2001")
-//                .checkResultsValue("Subjects", "Maths")
-//                .checkResultsValue("Hobbies", "Reading")
-//                .checkResultsValue("Picture", "test.jpg")
-//                .checkResultsValue("Address", TestData.address)
-//                .checkResultsValue("State and City", "NCR Delhi");
     }
 }
